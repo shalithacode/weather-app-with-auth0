@@ -15,7 +15,14 @@ body {
   animation-fill-mode: forwards;
   overflow-x: Hidden;
 }
+.App {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
 
+  height: 100vh;
+}
 .custom-btn {
   width: 130px;
   height: 40px;
@@ -64,7 +71,7 @@ body {
   margin: 4px 2px;
   cursor: pointer;
 }
-.loading-container {
+.loading-image-container {
   display: "flex";
   justify-content: "center";
   align-items: "center";

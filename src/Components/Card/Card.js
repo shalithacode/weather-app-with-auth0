@@ -1,24 +1,34 @@
 import "./Card.css";
 import { Link } from "react-router-dom";
 function Card(props) {
+  const crossIconHandler = () => {
+    props.onCloseHandler(props.citiData.id);
+  };
   return (
     <div id="cards">
+      <img
+        className="cross_icon"
+        src="./cross_icon.png"
+        alt="cross_icon"
+        onClick={crossIconHandler}
+      />
       <Link
         to="/cardDetails"
         state={{
           id: props.citiData.id,
-          backgroundColor: props.backgroundColor,
+          backgroundColor: props.BACKGROUND_COLORS,
         }}
         style={{ textDecoration: "none" }}
       >
         <div className="card">
           <img
             style={{
-              backgroundColor: `${props.backgroundColor}`,
+              backgroundColor: `${props.BACKGROUND_COLORS}`,
             }}
             src="./cloud.png"
             alt="Cloud-Img"
           />
+
           <div className="card-img-overlay">
             <div className="row">
               <div className="col-6 b-r align-self-center">

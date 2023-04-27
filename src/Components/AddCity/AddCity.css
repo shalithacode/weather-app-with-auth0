@@ -1,0 +1,49 @@
+.AddCity-container {
+  width: 90%;
+  margin: 0 auto;
+}
+.AddCity-container form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.city-input-name {
+  width: 350px;
+  height: 45px;
+  border-radius: 8px;
+  background: rgb(30, 32, 39);
+  color: rgb(242, 240, 240);
+  margin-right: -15px;
+  padding: 10px 25px;
+  font-size: 15px;
+  border: none;
+}
+input[type="text"]:focus {
+  outline: none;
+}
+button:focus {
+  outline: none;
+}
+
+.city-input-button {
+  height: 45px;
+  background-color: #6c5dd3;
+  color: rgb(242, 240, 240);
+  font-size: 15px;
+  border: none;
+  text-align: center;
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+@media screen and (max-width: 525px) {
+  .city-input-name {
+    width: 250px;
+  }
+
+  .city-input-button {
+    padding: 0 20px;
+  }
+}

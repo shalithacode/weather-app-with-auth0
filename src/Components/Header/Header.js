@@ -1,18 +1,20 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import "./Header.css";
 
-function Header() {
+function Header(props) {
   const { logout } = useAuth0();
   return (
-    <header>
+    <header className="wether-header">
+      <div className="user-name">
+        <p>{props.userName}</p>
+      </div>
       <div className="weather-headline">
         <img src="./icon.svg" alt="weather-icon" className="weather-icon" />
         <h1 className="weather-text">Weather App</h1>
-
-        <button className="logout-btn" onClick={() => logout()}>
-          Log Out
-        </button>
       </div>
+      <button className="logout-btn" onClick={() => logout()}>
+        Log Out
+      </button>
     </header>
   );
 }

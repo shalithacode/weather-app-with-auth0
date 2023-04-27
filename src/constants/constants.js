@@ -1,4 +1,4 @@
-export const backgroundColor = [
+export const BACKGROUND_COLORS = [
   "#2196F3",
   "#00BCD4",
   "#4CAF50",
@@ -10,7 +10,7 @@ export const backgroundColor = [
   "#673AB7",
   "#3F51B5",
 ];
-export const initialWeatherData = {
+export const INITIAL_WEATHER_DATA = {
   coord: { lon: "", lat: "" },
   sys: {
     type: "",
@@ -48,7 +48,7 @@ export const initialWeatherData = {
   name: "",
 };
 
-export const monthAbbreviations = [
+export const MONTH_ABBREVIATIONS = [
   "Jan",
   "Feb",
   "Mar",
@@ -62,6 +62,3 @@ export const monthAbbreviations = [
   "Nov",
   "Dec",
 ];
-
-export const API_KEY = "895284fb2d2c50a520ea537456963d9c";
-// export const API_KEY = "29640d77bb7f5bcf2335d6e6d306fb55";

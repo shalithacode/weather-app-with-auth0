@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { initialWeatherData, monthAbbreviations, API_KEY } from "../util/util";
+import {
+  INITIAL_WEATHER_DATA,
+  MONTH_ABBREVIATIONS,
+} from "../../constants/constants";
 import "./CardDetail.css";
-
 import { useLocation } from "react-router-dom";
+import { fetchFullWeatherData } from "../Helpers/APIHelper";
 
 const CardDetail = () => {
-  const [data, setData] = useState(initialWeatherData);
-  const [formattedDateTime, setFformattedDateTime] = useState("");
+  const [data, setData] = useState(INITIAL_WEATHER_DATA);
+  const [formattedDateTime, setFormattedDateTime] = useState("");
   const location = useLocation();
 
   useEffect(() => {
     const CITY_CODE = location.state.id;
-    const weatherAPI = `https://api.openweathermap.org/data/2.5/group?id=${CITY_CODE}&units=metric&appid=${API_KEY}`;
+    const weatherAPI = fetchFullWeatherData.getWeatherAPIUrl(CITY_CODE);
 
     fetch(weatherAPI)
       .then((response) => response.json())
@@ -28,11 +31,11 @@ const CardDetail = () => {
     const formattedMinute = minute < 10 ? `0${minute}` : minute;
     const ampm = hour < 12 ? "am" : "pm";
 
-    const monthAbbreviation = monthAbbreviations[now.getMonth()];
+    const monthAbbreviation = MONTH_ABBREVIATIONS[now.getMonth()];
 
     const dayOfMonth = now.getDate();
 
-    setFformattedDateTime(
+    setFormattedDateTime(
       `${formattedHour}.${formattedMinute}${ampm}, ${monthAbbreviation} ${dayOfMonth}`
     );
   }, [location.state.id]);
