@@ -5,7 +5,7 @@ import {
 } from "../../constants/constants";
 import "./CardDetail.css";
 import { useLocation } from "react-router-dom";
-import { fetchFullWeatherData } from "../Helpers/APIHelper";
+import { fetchFullWeatherData } from "../../Helpers/APIHelper";
 
 const CardDetail = () => {
   const [data, setData] = useState(INITIAL_WEATHER_DATA);
