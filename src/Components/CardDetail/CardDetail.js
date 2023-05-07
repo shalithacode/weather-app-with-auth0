@@ -43,10 +43,7 @@ const CardDetail = () => {
   return (
     <div className="cardView">
       <div className="cView">
-        <div
-          className="top"
-          style={{ backgroundColor: location.state.backgroundColor }}
-        >
+        <div className={`top background--${location.state.backgroundColorId}`}>
           <h1 className="heading">
             {data.name}, {data.sys.country}
           </h1>

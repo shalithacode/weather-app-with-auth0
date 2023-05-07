@@ -68,6 +68,34 @@ p {
   font-size: 32px;
   font-weight: 200;
 }
+a:link {
+  text-decoration: none;
+}
+
+.background--0 {
+  background-color: #2196f3;
+}
+.background--1 {
+  background-color: #00bcd4;
+}
+.background--2 {
+  background-color: #4caf50;
+}
+.background--3 {
+  background-color: #ffeb3b;
+}
+.background--4 {
+  background-color: #ff9800;
+}
+.background--5 {
+  background-color: #ff9800;
+}
+.background--6 {
+  background-color: #673ab7;
+}
+.background--7 {
+  background-color: #3f51b5;
+}
 @media only screen and (min-width: 320px) and (max-width: 450px) {
   .card {
     width: 80%;

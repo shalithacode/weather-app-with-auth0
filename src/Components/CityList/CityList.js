@@ -2,7 +2,6 @@ import Card from "../Card/Card";
 import AddCity from "../AddCity/AddCity";
 import "./CityList.css";
 import React, { useState, useEffect } from "react";
-import { BACKGROUND_COLORS } from "../../constants/constants";
 import { fetchCities, fetchWeatherData } from "../../Helpers/APIHelper";
 
 function CityList() {
@@ -53,8 +52,8 @@ function CityList() {
             <Card
               key={citiData.id}
               citiData={citiData}
-              BACKGROUND_COLORS={BACKGROUND_COLORS[i]}
               onCloseHandler={cardColseHanlder}
+              id={i}
             />
           );
         })}

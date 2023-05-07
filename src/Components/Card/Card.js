@@ -16,15 +16,12 @@ function Card(props) {
         to="/cardDetails"
         state={{
           id: props.citiData.id,
-          backgroundColor: props.BACKGROUND_COLORS,
+          backgroundColorId: props.id,
         }}
-        style={{ textDecoration: "none" }}
       >
         <div className="card">
           <img
-            style={{
-              backgroundColor: `${props.BACKGROUND_COLORS}`,
-            }}
+            className={`background--${props.id}`}
             src="./cloud.png"
             alt="Cloud-Img"
           />
