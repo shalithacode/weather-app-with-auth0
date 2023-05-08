@@ -6,38 +6,34 @@ import { fetchCities, fetchWeatherData } from "../../Helpers/APIHelper";
 
 function CityList() {
   const [data, setData] = useState([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const cityCodes = await fetchCities();
-        const weatherData = await fetchWeatherData(cityCodes);
-        setData(weatherData);
-      } catch (error) {
-        console.error(error);
-      }
+  async function fetchData() {
+    try {
+      const cityCodes = await fetchCities();
+      const weatherData = await fetchWeatherData(cityCodes);
+      localStorage.setItem(
+        "WeatherData",
+        JSON.stringify({ weatherData, time: new Date().getTime() })
+      );
+      setData(weatherData);
+    } catch (error) {
+      console.error(error);
     }
-    fetchData();
-  }, []);
-
+  }
   useEffect(() => {
-    localStorage.setItem(
-      "WeatherData",
-      JSON.stringify({ data, time: new Date().getTime() })
-    );
-  }, [data]);
-
-  function getWeatherData() {
     const now = new Date().getTime();
     const weatherData = localStorage.getItem("WeatherData");
     if (weatherData) {
-      const { data: cachedData, time } = JSON.parse(weatherData);
+      const { weatherData: cachedData, time } = JSON.parse(weatherData);
+
       if (now - time < 1000 * 60 * 5) {
-        return cachedData;
+        setData(cachedData);
+      } else {
+        fetchData();
       }
+    } else {
+      fetchData();
     }
-    return data;
-  }
+  }, []);
 
   const cardColseHanlder = (cardId) => {
     const filteredCities = data.filter((city) => city.id !== cardId);
@@ -47,7 +43,7 @@ function CityList() {
     <>
       <AddCity></AddCity>
       <div className="city-grid">
-        {getWeatherData().map((citiData, i) => {
+        {data.map((citiData, i) => {
           return (
             <Card
               key={citiData.id}

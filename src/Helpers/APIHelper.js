@@ -15,6 +15,15 @@ async function fetchWeatherData(cityCodes) {
     dt: item.dt,
     id: item.id,
     name: item.name,
+    pressure: item.main.pressure,
+    humidity: item.main.humidity,
+    visibility: item.visibility,
+    speed: item.wind.speed,
+    deg: item.wind.deg,
+    sunrise: item.sys.sunrise,
+    sunset: item.sys.sunset,
+    temp_min: item.main.temp_min,
+    temp_max: item.main.temp_max,
   }));
   return transformedData;
 }

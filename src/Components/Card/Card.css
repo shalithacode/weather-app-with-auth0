@@ -28,9 +28,9 @@ p {
 }
 
 .card-img-overlay {
-  margin-top: 1rem;
   height: 110px;
   padding: 1.25rem;
+  padding-bottom: 0;
 }
 .dl {
   display: inline-block;
@@ -42,17 +42,28 @@ p {
 
 .card-body {
   background-color: #30333d;
+  padding: 1rem 0;
 }
 
+.Send-img {
+  width: 50%;
+}
+.wind-text {
+  margin-bottom: 0;
+}
 .m-l-20 {
   margin-left: 5px;
 }
 .m-b-0 {
   margin-bottom: 0px;
 }
+h3.temp {
+  margin-bottom: 0;
+}
 .desc {
   font-size: 14px;
   font-weight: 500;
+  line-height: 1.2;
 }
 .card-title {
   padding-bottom: 0;
@@ -66,12 +77,15 @@ p {
   margin-left: auto;
   margin-right: auto;
   font-size: 32px;
-  font-weight: 200;
+  font-weight: 500;
 }
 a:link {
   text-decoration: none;
 }
-
+.row {
+  margin-left: 4px;
+  margin-right: -38px;
+}
 .background--0 {
   background-color: #2196f3;
 }
@@ -96,7 +110,17 @@ a:link {
 .background--7 {
   background-color: #3f51b5;
 }
-@media only screen and (min-width: 320px) and (max-width: 450px) {
+
+@media only screen and (min-width: 260px) and (max-width: 450px) {
+  .col-6,
+  .col-5 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .col-3 {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
   .card {
     width: 80%;
     /* margin-left: 15px;
@@ -109,6 +133,35 @@ a:link {
   .card-title {
     padding-bottom: 0;
   }
+  .card-body {
+    padding: 10px 2px;
+  }
+  .desc {
+    margin-top: -20px;
+  }
+  .row {
+    margin-left: 0;
+  }
+  .col-4 {
+    padding-right: 0;
+  }
+  .Send-img {
+    width: 40%;
+  }
+  p {
+    line-height: 1.4;
+  }
+  p.id {
+    margin-bottom: 2px;
+    font-size: 10px;
+  }
+  p.text-right {
+    font-size: 10px;
+    margin-bottom: 0;
+  }
+  .min-padding {
+    padding-left: 0;
+  }
 }
 .cross_icon {
   width: 12px;
@@ -118,9 +171,21 @@ a:link {
   /* cursor: pointer; */
   z-index: 10;
 }
-
 @media screen and (max-width: 450px) {
   .card {
     width: 20rem;
+  }
+}
+@media screen and (max-width: 340px) {
+  .card {
+    width: 17rem;
+  }
+  .city,
+  .temp {
+    font-size: 19px;
+  }
+  p,
+  .desc {
+    font-size: 12px;
   }
 }
