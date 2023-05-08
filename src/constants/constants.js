@@ -1,3 +1,5 @@
+export const VALIDITY_PERIOD = 1000 * 60 * 5;
+
 export const INITIAL_WEATHER_DATA = {
   coord: { lon: "", lat: "" },
   sys: {

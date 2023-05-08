@@ -3,6 +3,7 @@ import AddCity from "../AddCity/AddCity";
 import "./CityList.css";
 import React, { useState, useEffect } from "react";
 import { fetchCities, fetchWeatherData } from "../../Helpers/APIHelper";
+import { VALIDITY_PERIOD } from "../../constants/constants";
 
 function CityList() {
   const [data, setData] = useState([]);
@@ -25,7 +26,7 @@ function CityList() {
     if (weatherData) {
       const { weatherData: cachedData, time } = JSON.parse(weatherData);
 
-      if (now - time < 1000 * 60 * 5) {
+      if (now - time < VALIDITY_PERIOD) {
         setData(cachedData);
       } else {
         fetchData();
